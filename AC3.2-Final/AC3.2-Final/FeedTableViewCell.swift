@@ -10,7 +10,6 @@ import UIKit
 
 class FeedTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var feedImageView: UIImageView!
     @IBOutlet weak var commentLabel: UILabel!
     

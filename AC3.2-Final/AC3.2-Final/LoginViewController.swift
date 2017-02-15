@@ -26,7 +26,7 @@ class LoginViewController: UIViewController, UIAlertViewDelegate {
             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                 if let error = error {
                     print("User Login Error \(error.localizedDescription)")
-                    let alertController = showAlert(title: "Login Failed", message: "Failed to Login. Please Check Your Email and Password!")
+                    let alertController = showAlert(title: "Login Failed!", message: "Failed to Login. Please Check Your Email and Password!")
                     
                     self.present(alertController, animated: true, completion: nil)
                     self.clearTextFields()
@@ -34,13 +34,13 @@ class LoginViewController: UIViewController, UIAlertViewDelegate {
                 else {
                     
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let svc = storyboard.instantiateViewController(withIdentifier: "TabBarVC")
+                    let tbvc = storyboard.instantiateViewController(withIdentifier: "TabBarVC")
                     let alertController = UIAlertController(title: "Login Successful!", message: nil, preferredStyle: .alert)
                     self.present(alertController, animated: true, completion: nil)
                     self.clearTextFields()
                     
                     alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-                        self.present(svc, animated: true, completion: nil)
+                        self.present(tbvc, animated: true, completion: nil)
                     }))
                     
                 }
@@ -54,12 +54,12 @@ class LoginViewController: UIViewController, UIAlertViewDelegate {
             FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
                 if let error = error {
                     print("User Creating Error \(error.localizedDescription)")
-                    let alertController = showAlert(title: "Signup Failed", message: "Failed to Register. Please Try Again!")
+                    let alertController = showAlert(title: "Signup Failed!", message: "Failed to Register. Please Try Again!")
                     self.present(alertController, animated: true, completion: nil)
                     self.clearTextFields()
                 }
                 else {
-                    let alertController = showAlert(title: "Signup Success", message: "Successfully Registered. Please Login to Use Our App!")
+                    let alertController = showAlert(title: "Signup Successful!", message: "Successfully Registered. Please Login to Use Our App!")
                     self.present(alertController, animated: true, completion: nil)
                     self.clearTextFields()
                 }

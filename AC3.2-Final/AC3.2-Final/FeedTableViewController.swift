@@ -18,7 +18,6 @@ class FeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Unit6Final-staGram"
         self.tableView.estimatedRowHeight = 100.0
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.databaseRef = FIRDatabase.database().reference().child("posts")

@@ -88,9 +88,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="88.605697151424295"/>
+            <point key="canvasLocation" x="838" y="-215"/>
         </scene>
-        <!--Upload View Controller-->
+        <!--"Unit6Final-staGram"-->
         <scene sceneID="Dzh-l6-ZNj">
             <objects>
                 <viewController id="Car-Zr-Zv7" customClass="UploadViewController" customModule="AC3_2_Final" customModuleProvider="target" sceneMemberID="viewController">
@@ -112,30 +112,30 @@
                                     <action selector="pickImageTapped:" destination="Car-Zr-Zv7" eventType="touchUpInside" id="aRK-Ah-7hk"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="Add a description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UVa-np-vKk">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekH-8k-wqT">
                                 <rect key="frame" x="8" y="447" width="359" height="151"/>
-                                <nil key="textColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="UVa-np-vKk" firstAttribute="leading" secondItem="0UV-WB-daI" secondAttribute="leading" constant="8" id="652-GP-YeQ"/>
+                            <constraint firstItem="Hoa-Dw-s7x" firstAttribute="top" secondItem="ekH-8k-wqT" secondAttribute="bottom" constant="20" id="HiF-Nb-Uq1"/>
+                            <constraint firstAttribute="trailing" secondItem="ekH-8k-wqT" secondAttribute="trailing" constant="8" id="Ita-Jx-7ZK"/>
+                            <constraint firstItem="ekH-8k-wqT" firstAttribute="top" secondItem="3II-MR-xKk" secondAttribute="bottom" constant="8" id="MbQ-83-nYF"/>
                             <constraint firstItem="3II-MR-xKk" firstAttribute="trailing" secondItem="14l-g5-GMq" secondAttribute="trailing" id="NJf-GU-HVz"/>
                             <constraint firstItem="14l-g5-GMq" firstAttribute="top" secondItem="bGD-DL-VEu" secondAttribute="bottom" id="PA2-I0-Udz"/>
                             <constraint firstItem="14l-g5-GMq" firstAttribute="leading" secondItem="0UV-WB-daI" secondAttribute="leading" id="U3f-AO-Fqn"/>
-                            <constraint firstItem="Hoa-Dw-s7x" firstAttribute="top" secondItem="UVa-np-vKk" secondAttribute="bottom" constant="20" id="U8Q-qr-rFe"/>
-                            <constraint firstItem="UVa-np-vKk" firstAttribute="top" secondItem="3II-MR-xKk" secondAttribute="bottom" constant="8" id="XaJ-IQ-CL4"/>
+                            <constraint firstItem="ekH-8k-wqT" firstAttribute="leading" secondItem="0UV-WB-daI" secondAttribute="leading" constant="8" id="Vds-ML-6e1"/>
                             <constraint firstItem="3II-MR-xKk" firstAttribute="bottom" secondItem="14l-g5-GMq" secondAttribute="bottom" id="Yac-D6-ydy"/>
                             <constraint firstAttribute="trailing" secondItem="14l-g5-GMq" secondAttribute="trailing" id="ctz-Cv-O85"/>
                             <constraint firstItem="14l-g5-GMq" firstAttribute="height" secondItem="0UV-WB-daI" secondAttribute="width" multiplier="1:1" id="kBo-iB-eZz"/>
                             <constraint firstItem="3II-MR-xKk" firstAttribute="leading" secondItem="14l-g5-GMq" secondAttribute="leading" id="mgh-eI-b9n"/>
-                            <constraint firstAttribute="trailing" secondItem="UVa-np-vKk" secondAttribute="trailing" constant="8" id="nwi-tG-i8e"/>
                             <constraint firstItem="3II-MR-xKk" firstAttribute="top" secondItem="14l-g5-GMq" secondAttribute="top" id="vYM-In-goG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="xL9-dA-U96">
+                    <navigationItem key="navigationItem" title="&quot;Unit6Final-staGram&quot;" id="xL9-dA-U96">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="eZC-TT-wzw">
                             <connections>
                                 <action selector="doneButtonTapped:" destination="Car-Zr-Zv7" id="iVL-Ra-hkO"/>
@@ -143,7 +143,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="commentTextField" destination="UVa-np-vKk" id="GFt-qC-pW9"/>
+                        <outlet property="commentTextView" destination="ekH-8k-wqT" id="lel-cd-N6T"/>
                         <outlet property="selectedImageView" destination="14l-g5-GMq" id="roo-zV-jXo"/>
                     </connections>
                 </viewController>
@@ -151,7 +151,7 @@
             </objects>
             <point key="canvasLocation" x="2422" y="494"/>
         </scene>
-        <!--Feed Table View Controller-->
+        <!--"Unit6Final-staGram"-->
         <scene sceneID="R1y-eY-Huo">
             <objects>
                 <tableViewController id="d05-Za-DGr" customClass="FeedTableViewController" customModule="AC3_2_Final" customModuleProvider="target" sceneMemberID="viewController">
@@ -164,7 +164,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="467"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kta-vS-mGz" id="R1q-TX-4yJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="466.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="466"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3tU-RL-zhr">
@@ -199,7 +199,7 @@
                             <outlet property="delegate" destination="d05-Za-DGr" id="IuW-R6-qkj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="zUs-zB-h3n"/>
+                    <navigationItem key="navigationItem" title="&quot;Unit6Final-staGram&quot;" id="zUs-zB-h3n"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLQ-wY-csB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -222,13 +222,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hi2-Mr-AQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="786" y="89"/>
+            <point key="canvasLocation" x="839" y="494"/>
         </scene>
-        <!--Item 2-->
+        <!--Upload-->
         <scene sceneID="FVg-9B-Fw0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BNP-7z-r8r" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" image="upload" selectedImage="upload" id="zfq-Rh-A0D"/>
+                    <tabBarItem key="tabBarItem" title="Upload" image="upload" selectedImage="upload" id="zfq-Rh-A0D"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gBG-YL-NT6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -243,11 +243,11 @@
             </objects>
             <point key="canvasLocation" x="1697" y="495"/>
         </scene>
-        <!--Item-->
+        <!--Feed-->
         <scene sceneID="SKZ-tH-tdL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TJp-LV-SWx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="chickenleg" selectedImage="chickenleg" id="8iu-O6-Qvu"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="chickenleg" selectedImage="chickenleg" id="8iu-O6-Qvu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ub3-sL-SXN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

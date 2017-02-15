@@ -14,10 +14,11 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
 
-class UploadViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class UploadViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextViewDelegate {
     
     @IBOutlet weak var selectedImageView: UIImageView!
-    @IBOutlet weak var commentTextField: UITextField!
+    @IBOutlet weak var commentTextView: UITextView!
+    
     var imagePickerController: UIImagePickerController!
     
     var capturedImage: UIImage!
@@ -28,9 +29,13 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate,UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Unit6Final-staGram"
         self.user = FIRAuth.auth()?.currentUser
         self.databaseRef = FIRDatabase.database().reference().child("posts")
+        commentTextView.delegate = self
+        commentTextView.text = "Add a description.."
+        commentTextView.textColor = UIColor.lightGray
+        commentTextView.layer.borderWidth = 1.0
+        commentTextView.layer.borderColor = UIColor.lightGray.cgColor
         
     }
     
@@ -71,7 +76,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate,UI
             }
         })
         
-        let post = Post(key: postRef.key, comment: self.commentTextField.text!, userId: currentUserId!)
+        let post = Post(key: postRef.key, comment: self.commentTextView.text!, userId: currentUserId!)
         let dict = post.addDictionary
         
         postRef.setValue(dict) { (error, ref) in
@@ -81,8 +86,15 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate,UI
                 self.present(alertController, animated: true, completion: nil)
             }
             else {
-                let alertController = showAlert(title: "Photo Uploaded!", message: nil)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let fvc = storyboard.instantiateViewController(withIdentifier: "TabBarVC")
+                let alertController = UIAlertController(title: "Photo Uploaded!", message: nil, preferredStyle: .alert)
                 self.present(alertController, animated: true, completion: nil)
+                
+                alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                    self.present(fvc, animated: true, completion: nil)
+                }))
+                
             }
         }
     }
@@ -98,7 +110,6 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate,UI
                 selectedImageView.backgroundColor = .clear
                 selectedImageView.contentMode = .scaleAspectFit
                 selectedImageView.image = capturedImage
-                
             }
             
         default:
@@ -109,6 +120,20 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate,UI
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if commentTextView.textColor == UIColor.lightGray {
+            commentTextView.text = nil
+            commentTextView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Add a description.."
+            textView.textColor = UIColor.lightGray
+        }
     }
     
 }
