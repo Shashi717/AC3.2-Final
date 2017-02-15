@@ -17,7 +17,7 @@ class FeedTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.title = "Unit6Final-staGram"
         self.tableView.estimatedRowHeight = 100.0
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -41,20 +41,20 @@ class FeedTableViewController: UITableViewController {
             self.tableView.reloadData()
         })
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCellIdentifier", for: indexPath) as! FeedTableViewCell
-
+        
         cell.feedImageView.image = nil
         let post = posts[indexPath.row]
         cell.commentLabel.text = post.comment

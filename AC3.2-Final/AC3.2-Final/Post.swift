@@ -19,7 +19,7 @@ class Post {
         self.comment = comment
         self.userId = userId
     }
-    
+
     var addDictionary: [String:String] {
         return ["comment": comment, "userId": userId]
     }

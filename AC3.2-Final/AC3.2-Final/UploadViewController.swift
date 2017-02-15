@@ -70,7 +70,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate,UI
                 return
             }
         })
-
+        
         let post = Post(key: postRef.key, comment: self.commentTextField.text!, userId: currentUserId!)
         let dict = post.addDictionary
         
