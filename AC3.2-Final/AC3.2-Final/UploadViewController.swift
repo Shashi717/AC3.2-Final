@@ -124,6 +124,8 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate,UI
         self.dismiss(animated: true, completion: nil)
     }
     
+    // MARK: - UITextFieldDelegate
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
         if commentTextView.textColor == UIColor.lightGray {
             commentTextView.text = nil
