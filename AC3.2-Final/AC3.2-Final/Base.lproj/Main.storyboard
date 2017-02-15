@@ -24,13 +24,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meatly_logo" translatesAutoresizingMaskIntoConstraints="NO" id="L8O-8J-4f5">
-                                <rect key="frame" x="66" y="70" width="243" height="200"/>
+                                <rect key="frame" x="91" y="95" width="193" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="Pey-4C-5BK"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Br-Ib-Js7">
-                                <rect key="frame" x="66" y="345" width="243" height="30"/>
+                                <rect key="frame" x="66" y="370" width="243" height="30"/>
                                 <color key="backgroundColor" red="0.89009910821914673" green="0.89025193452835083" blue="0.89008945226669312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="WI4-B7-1U8"/>
@@ -40,7 +40,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ngH-Br-foM">
-                                <rect key="frame" x="66" y="405" width="243" height="30"/>
+                                <rect key="frame" x="66" y="430" width="243" height="30"/>
                                 <color key="backgroundColor" red="0.89009910820000004" green="0.89025193449999995" blue="0.89008945230000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="igz-gn-gSE"/>
@@ -50,14 +50,14 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CO5-UR-39v">
-                                <rect key="frame" x="239" y="455" width="70" height="30"/>
+                                <rect key="frame" x="239" y="480" width="70" height="30"/>
                                 <state key="normal" title="REGISTER"/>
                                 <connections>
                                     <action selector="registerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ceg-QI-VPS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="En6-s3-H6F">
-                                <rect key="frame" x="66" y="455" width="45" height="30"/>
+                                <rect key="frame" x="66" y="480" width="45" height="30"/>
                                 <state key="normal" title="LOGIN"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D0N-2v-g0i"/>
@@ -67,9 +67,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CO5-UR-39v" firstAttribute="trailing" secondItem="ngH-Br-foM" secondAttribute="trailing" id="4Y8-Vr-bGA"/>
-                            <constraint firstItem="L8O-8J-4f5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="5kd-bK-Sof"/>
+                            <constraint firstItem="L8O-8J-4f5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="75" id="5kd-bK-Sof"/>
                             <constraint firstItem="CO5-UR-39v" firstAttribute="top" secondItem="ngH-Br-foM" secondAttribute="bottom" constant="20" id="6Tt-KE-6Wo"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="L8O-8J-4f5" secondAttribute="trailing" constant="50" id="HSu-z6-HCD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="L8O-8J-4f5" secondAttribute="trailing" constant="75" id="HSu-z6-HCD"/>
                             <constraint firstItem="ngH-Br-foM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="NW1-AZ-w16"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ngH-Br-foM" secondAttribute="trailing" constant="50" id="RMS-rU-KXA"/>
                             <constraint firstItem="ngH-Br-foM" firstAttribute="top" secondItem="7Br-Ib-Js7" secondAttribute="bottom" constant="30" id="RaY-0T-shR"/>
@@ -77,7 +77,7 @@
                             <constraint firstItem="7Br-Ib-Js7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="etn-bf-eLU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7Br-Ib-Js7" secondAttribute="trailing" constant="50" id="hPj-Z0-DNt"/>
                             <constraint firstItem="En6-s3-H6F" firstAttribute="top" secondItem="ngH-Br-foM" secondAttribute="bottom" constant="20" id="kBo-ZF-xdR"/>
-                            <constraint firstItem="L8O-8J-4f5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="lPs-ra-f8q"/>
+                            <constraint firstItem="L8O-8J-4f5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="75" id="lPs-ra-f8q"/>
                             <constraint firstItem="7Br-Ib-Js7" firstAttribute="top" secondItem="L8O-8J-4f5" secondAttribute="bottom" constant="75" id="och-9E-zXO"/>
                         </constraints>
                     </view>
