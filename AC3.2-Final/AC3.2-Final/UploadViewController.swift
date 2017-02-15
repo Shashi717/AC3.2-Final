@@ -67,34 +67,36 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate,UI
         let metadata = FIRStorageMetadata()
         metadata.cacheControl = "public,max-age=300"
         metadata.contentType = "image/jpeg"
-        let jpeg = UIImageJPEGRepresentation(capturedImage, 0.5)
-        
-        let _ = imageNameRef.put(jpeg!, metadata: metadata, completion: { (metadata, error) in
-            guard metadata != nil else {
-                print("put error: \(error?.localizedDescription)")
-                return
-            }
-        })
-        
-        let post = Post(key: postRef.key, comment: self.commentTextView.text!, userId: currentUserId!)
-        let dict = post.addDictionary
-        
-        postRef.setValue(dict) { (error, ref) in
-            if let error = error {
-                print("Set value error: \(error.localizedDescription)")
-                let alertController = showAlert(title: "Upload Failed", message: "Uploading Failed! Please Try Again!")
-                self.present(alertController, animated: true, completion: nil)
-            }
-            else {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let fvc = storyboard.instantiateViewController(withIdentifier: "TabBarVC")
-                let alertController = UIAlertController(title: "Photo Uploaded!", message: nil, preferredStyle: .alert)
-                self.present(alertController, animated: true, completion: nil)
-                
-                alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-                    self.present(fvc, animated: true, completion: nil)
-                }))
-                
+        if capturedImage != nil {
+            let jpeg = UIImageJPEGRepresentation(capturedImage, 0.5)
+            
+            let _ = imageNameRef.put(jpeg!, metadata: metadata, completion: { (metadata, error) in
+                guard metadata != nil else {
+                    print("put error: \(error?.localizedDescription)")
+                    return
+                }
+            })
+            
+            let post = Post(key: postRef.key, comment: self.commentTextView.text!, userId: currentUserId!)
+            let dict = post.addDictionary
+            
+            postRef.setValue(dict) { (error, ref) in
+                if let error = error {
+                    print("Set value error: \(error.localizedDescription)")
+                    let alertController = showAlert(title: "Upload Failed", message: "Uploading Failed! Please Try Again!")
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                else {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let fvc = storyboard.instantiateViewController(withIdentifier: "TabBarVC")
+                    let alertController = UIAlertController(title: "Photo Uploaded!", message: nil, preferredStyle: .alert)
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                    alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                        self.present(fvc, animated: true, completion: nil)
+                    }))
+                    
+                }
             }
         }
     }
